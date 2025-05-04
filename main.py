@@ -53,6 +53,21 @@ def switch_branch(branch_name):
     print(f"Switched to branch {branch_name}")
     return True
 
+# a function to run a command in the terminal and also print the output
+def run_command(command):
+    # run the command
+    result = subprocess.run(command, shell=True, capture_output=True, text=True)
+    
+    # print the output
+    print(result.stdout)
+    
+    # check if there was an error
+    if result.returncode != 0:
+        print(f"Error: {result.stderr}")
+        return False
+    
+    return True
+
 # create a function to create a file with the name text.txt
 def create_file(file_path):
     # check if the file already exists
