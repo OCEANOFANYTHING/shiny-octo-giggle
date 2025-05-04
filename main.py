@@ -100,12 +100,11 @@ def main():
     branch_name = gen_branch_name()
     
     # create the branch
-    if not create_branch(branch_name):
-        return
+    create_branch(branch_name)
+
     
     # add a small change to the text file
-    if not add_change_to_text_file(TEXT_FILE_PATH):
-        return
+    add_change_to_text_file(TEXT_FILE_PATH)
     
     # add the file to git
     run_command("git add .")
@@ -117,7 +116,7 @@ def main():
     run_command(f"git push origin {branch_name}")
     
     # create a pull request with the changes to the new branch and the main branch
-    run_command(f'gh pr create --base main --head {branch_name} --fill')
+    # run_command(f'gh pr create --base main --head {branch_name} --fill')
     
 
     run_command(f'git checkout main')
