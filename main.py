@@ -2,6 +2,7 @@
 import random
 import os
 import subprocess
+import time
 
 # Constants
 
@@ -131,4 +132,9 @@ def main():
     run_command("git checkout main")
 
 if __name__ == "__main__":
-    main()
+    loopturns = int(input("How many times do you want to run the script? "))
+    for i in range(loopturns):
+        main()
+        print(f"Finished run {i+1} of {loopturns}")
+        print("Waiting 5 seconds before next run")
+        time.sleep(5)
