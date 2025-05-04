@@ -7,8 +7,8 @@ import subprocess
 
 TEXT_FILE_PATH = "text.txt"
 
-COAUTHOR_1 = "Co-authored-by: ScriptXeno noktisorg@gmail.com"
-COAUTHOR_2 = "Co-authored-by: OCEANOFANYTHING work.oceanofanything@gmail.com"
+COAUTHOR_1 = "Co-authored-by: ScriptXeno <noktisorg@gmail.com>"
+COAUTHOR_2 = "Co-authored-by: OCEANOFANYTHING <work.oceanofanything@gmail.com>"
 
 # First Make a new branch with a meaningful name that dont looks like its a random branch
 
