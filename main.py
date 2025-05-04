@@ -93,3 +93,31 @@ def add_change_to_text_file(file_path):
     
     print(f"Small change added to {file_path}")
     return True
+
+
+def main():
+    # generate a branch name
+    branch_name = gen_branch_name()
+    
+    # create the branch
+    if not create_branch(branch_name):
+        return
+    
+    # add a small change to the text file
+    if not add_change_to_text_file(TEXT_FILE_PATH):
+        return
+    
+    # add the file to git
+    run_command("git add .")
+    
+    # commit the changes with a message
+    run_command(f'git commit -m "Added a small change to {TEXT_FILE_PATH}\n\n\n{COAUTHOR_1}\n{COAUTHOR_2}"')
+    
+    # push the changes to the remote repository
+    run_command(f"git push origin {branch_name}")
+    
+    # create a pull request with co-authors
+    run_command(f'gh pr create --base main --head {branch_name} --title "Added a small change to {TEXT_FILE_PATH}" --body "This is a small change" --co-authors "{COAUTHOR_1}, {COAUTHOR_2}"')
+
+if __name__ == "__main__":
+    main()
