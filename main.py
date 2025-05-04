@@ -120,7 +120,7 @@ def main():
     subprocess.run(["git", "commit", "-m", COMMIT_MESSAGE], check=True)
     
     # push the changes to the remote repository
-    # run_command(f"git push origin {branch_name}")
+    run_command(f"git push origin {branch_name}")
     
     # create a pull request with the changes to the new branch and the main branch
     # run_command(f'gh pr create --base main --head {branch_name} --fill')
