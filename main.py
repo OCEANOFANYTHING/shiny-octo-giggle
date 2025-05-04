@@ -5,7 +5,7 @@ import string
 
 # Configuration
 REPO_NAME = "shiny-octo-giggle"  # Replace with your repository name
-CO_AUTHOR = "ScriptXeno <noktisorg@gmail.com>"  # Replace with co-author details
+CO_AUTHOR = "ScriptXeno noktisorg@gmail.com"  # Replace with co-author details
 
 # Function to run shell commands
 def run_command(command):
@@ -29,9 +29,8 @@ def make_changes(file_path, content):
 # Step 3: Commit changes with co-author
 def commit_changes(commit_message):
     print("Committing changes")
-    co_author_flag = f"--author=\"{CO_AUTHOR}\""
     run_command(f"git add .")
-    run_command(f"git commit -m \"{commit_message}\" {co_author_flag}")
+    run_command(f"git commit -m \"{commit_message} {CO_AUTHOR}\"")
 
 # Step 4: Push branch to remote
 def push_branch(branch_name):
