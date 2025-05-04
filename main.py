@@ -31,8 +31,10 @@ def make_changes(file_path, content):
 # Step 3: Commit changes with co-author
 def commit_changes(commit_message):
     print("Committing changes")
+    co_author_trailer = f"Co-authored-by: {CO_AUTHOR}"
+    full_commit_message = f"{commit_message}\n\n{co_author_trailer}"
     run_command(f"git add .")
-    run_command(f"git commit -m \"{commit_message} {CO_AUTHOR}\"")
+    run_command(f"git commit -m \"{full_commit_message}\"")
 
 # Step 4: Push branch to remote
 def push_branch(branch_name):
