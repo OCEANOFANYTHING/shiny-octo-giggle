@@ -120,7 +120,7 @@ def main():
     run_command(f'gh pr create --base main --head {branch_name} --fill')
     
 
-    switch_branch("main")
+    run_command(f'git checkout main')
 
 if __name__ == "__main__":
     main()
