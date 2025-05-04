@@ -135,7 +135,11 @@ if __name__ == "__main__":
     loopturns = int(input("How many times do you want to run the script? "))
     # time delay to prevent rate limiting max 100 seconds
     time_delay = int(input("How long do you want to wait between runs? (in seconds) "))
-    if time_delay > 100:
+<<<<<<< HEAD
+    if time_delay < 100:
+=======
+    if time_delay < 100:
+>>>>>>> 2e8c1bba2489bfb859cc07a887a40a60a11efa90
         time_delay = 100
     for i in range(loopturns):
         main()
