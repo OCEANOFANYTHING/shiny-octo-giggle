@@ -5,7 +5,7 @@ import string
 
 # Configuration
 REPO_NAME = "shiny-octo-giggle"  # Replace with your repository name
-CO_AUTHOR = "Co-authored-by: ScriptXeno noktisorg@gmail.com"  # Replace with co-author details
+CO_AUTHOR = "ScriptXeno <noktisorg@gmail.com>"  # Replace with co-author details
 
 # Function to run shell commands
 def run_command(command):
