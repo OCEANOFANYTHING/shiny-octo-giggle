@@ -126,7 +126,7 @@ def main():
     run_command(f'gh pr create --base main --head {branch_name} --fill')
     
     #  merge the pull request
-    run_command(f'gh pr --merge {branch_name}')
+    run_command(f'gh pr merge {branch_name} --squash')
 
 if __name__ == "__main__":
     main()
