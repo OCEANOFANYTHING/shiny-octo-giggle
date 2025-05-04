@@ -53,3 +53,16 @@ def switch_branch(branch_name):
     print(f"Switched to branch {branch_name}")
     return True
 
+# create a function to create a file with the name text.txt
+def create_file(file_path):
+    # check if the file already exists
+    if os.path.exists(file_path):
+        print(f"File {file_path} already exists")
+        return False
+    
+    # create the file
+    with open(file_path, "w") as f:
+        f.write("This is a test file")
+    
+    print(f"File {file_path} created")
+    return True
