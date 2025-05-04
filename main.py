@@ -9,7 +9,9 @@ CO_AUTHOR = "ScriptXeno noktisorg@gmail.com"  # Replace with co-author details
 
 # Function to run shell commands
 def run_command(command):
+    print(f"Running command: {command}")
     result = subprocess.run(command, shell=True, capture_output=True, text=True)
+    print(f"Output: {result.stdout}")
     if result.returncode != 0:
         print(f"Error: {result.stderr}")
         raise Exception(f"Command failed: {command}")
