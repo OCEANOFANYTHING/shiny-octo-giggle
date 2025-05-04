@@ -81,3 +81,15 @@ def create_file(file_path):
     
     print(f"File {file_path} created")
     return True
+
+# make a function to add a small change to the text file
+def add_change_to_text_file(file_path):
+    # check if the file exists
+    create_file(file_path)
+
+    # add a small change to the file
+    with open(file_path, "a") as f:
+        f.write("\nThis is a small change")
+    
+    print(f"Small change added to {file_path}")
+    return True
