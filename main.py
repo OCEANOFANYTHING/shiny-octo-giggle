@@ -5,7 +5,8 @@ import string
 
 # Configuration
 REPO_NAME = "shiny-octo-giggle"  # Replace with your repository name
-CO_AUTHOR = "ScriptXeno noktisorg@gmail.com"  # Replace with co-author details
+CO_AUTHOR = "ScriptXeno <noktisorg@gmail.com>"  # Replace with co-author details
+CO_AUTHOR_ME = "OCEANOFANYTHING <work.oceanofanything@gmail.com>"  # Replace with co-author details
 
 # Function to run shell commands
 def run_command(command):
@@ -32,7 +33,8 @@ def make_changes(file_path, content):
 def commit_changes(commit_message):
     print("Committing changes")
     co_author_trailer = f"Co-authored-by: {CO_AUTHOR}"
-    full_commit_message = f"{commit_message}\n\n{co_author_trailer}"
+    co_author_me_trailer = f"Co-authored-by: {CO_AUTHOR_ME}"
+    full_commit_message = f"{commit_message}\n\n{co_author_trailer}\n{co_author_me_trailer}"
     run_command(f"git add .")
     run_command(f"git commit -m \"{full_commit_message}\"")
 
