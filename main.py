@@ -133,8 +133,13 @@ def main():
 
 if __name__ == "__main__":
     loopturns = int(input("How many times do you want to run the script? "))
+    # time delay to prevent rate limiting max 100 seconds
+    time_delay = int(input("How long do you want to wait between runs? (in seconds) "))
+    if time_delay < 100:
+        time_delay = 100
     for i in range(loopturns):
         main()
         print(f"Finished run {i+1} of {loopturns}")
-        print("Waiting 5 seconds before next run")
-        time.sleep(5)
+        if i < loopturns - 1:
+            print(f"Waiting {time_delay} seconds before next run")
+            time.sleep(time_delay)
