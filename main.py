@@ -10,6 +10,13 @@ TEXT_FILE_PATH = "text.txt"
 COAUTHOR_1 = "Co-authored-by: ScriptXeno <noktisorg@gmail.com>"
 COAUTHOR_2 = "Co-authored-by: OCEANOFANYTHING <work.oceanofanything@gmail.com>"
 
+COMMIT_MESSAGE = f"""
+Added a small change to {TEXT_FILE_PATH}
+
+
+{COAUTHOR_1}
+{COAUTHOR_2}"""
+
 # First Make a new branch with a meaningful name that dont looks like its a random branch
 
 def gen_branch_name():
@@ -118,6 +125,8 @@ def main():
     # create a pull request with the changes to the new branch and the main branch
     # run_command(f'gh pr create --base main --head {branch_name} --fill')
     
+    subprocess.run(["git", "commit", "-m", COMMIT_MESSAGE], check=True)
+
 
     # run_command(f'git checkout main')
 
