@@ -119,7 +119,7 @@ def main():
     # run_command(f'gh pr create --base main --head {branch_name} --fill')
     
 
-    run_command(f'git checkout main')
+    # run_command(f'git checkout main')
 
 if __name__ == "__main__":
     main()
