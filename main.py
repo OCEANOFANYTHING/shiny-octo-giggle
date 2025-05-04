@@ -117,7 +117,10 @@ def main():
     run_command(f"git push origin {branch_name}")
     
     # create a pull request with the changes to the new branch and the main branch
-    run_command(f'gh pr create --base main --head {branch_name} --title "Added a small change to {TEXT_FILE_PATH}\n\n\n{COAUTHOR_1}\n{COAUTHOR_2}" --body "This is a small change to the text file"')
+    run_command(f'gh pr create --base main --head {branch_name} --fill')
+    
+
+    switch_branch("main")
 
 if __name__ == "__main__":
     main()
