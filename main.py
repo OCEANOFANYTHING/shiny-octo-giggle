@@ -123,7 +123,7 @@ def main():
     run_command(f"git push origin {branch_name}")
     
     # create a pull request with the changes to the new branch and the main branch
-    # run_command(f'gh pr create --base main --head {branch_name} --fill')
+    run_command(f'gh pr create --base main --head {branch_name} --fill')
     
 
 
