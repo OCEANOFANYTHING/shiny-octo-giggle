@@ -127,6 +127,8 @@ def main():
     
     #  merge the pull request
     run_command(f'gh pr merge {branch_name} --squash')
+    
+    run_command("git checkout main")
 
 if __name__ == "__main__":
     main()
