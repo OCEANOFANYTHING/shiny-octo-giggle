@@ -30,7 +30,7 @@ def make_changes(file_path, content):
 def commit_changes(commit_message):
     print("Committing changes")
     run_command(f"git add .")
-    run_command(f"git commit -m \"{commit_message}\" {CO_AUTHOR}")
+    run_command(f"git commit -m \"{commit_message} {CO_AUTHOR}\"")
 
 # Step 4: Push branch to remote
 def push_branch(branch_name):
